@@ -1,3 +1,3 @@
-const getKeys = <TObj>(obj: TObj) => {
-  
+const getKeys = <TObj extends {}>(obj: TObj) => {
+    return Object.keys(obj)
 }
