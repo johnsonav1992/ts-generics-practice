@@ -36,7 +36,7 @@ const person2: MyReadonly<Person> = {
     , lastName: 'Johnson'
 }
 
-// person2.firstName = 'John'  ------ (Err: Cannot assign to firstName because it is a read-only property.)
+// person2.firstName = 'Bill'  ------ (Err: Cannot assign to firstName because it is a read-only property.)
 
 
 
