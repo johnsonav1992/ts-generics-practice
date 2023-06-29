@@ -47,6 +47,8 @@ const person2: MyReadonly<Person> = {
 
 type First<A extends any[]> = A extends [] ? never : A[0]
 
+// Example usage
+
 type Arr = [string, number, boolean]
 
 type IndexZero = First<Arr>     //type IndexZero = string
