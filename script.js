@@ -1,3 +1,6 @@
 "use strict";
-const test = 3;
-console.log('hello');
+///// TYPESCRIPT CODING CHALLENGES /////
+const person = {
+    firstName: 'Alex',
+    lastName: 'Johnson'
+};
