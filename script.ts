@@ -4,7 +4,7 @@
     Constructs a type by picking the set of properties K from T 
 */
 
-type MyPick<T, K extends keyof T> = { [keys in K]: T[keys] }
+type MyPick<T, K extends keyof T> = { [SelectedKeys in K]: T[SelectedKeys] }
 
 interface Person { 
     firstName: string
