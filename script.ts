@@ -82,3 +82,4 @@ type Push<Array extends unknown[], Item> = [...Array, Item]
 type TestArray = [1, 2]
 
 type AddedOn = Push<TestArray, 'Hello'>
+
