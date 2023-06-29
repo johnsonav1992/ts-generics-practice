@@ -52,3 +52,19 @@ type First<A extends any[]> = A extends [] ? never : A[0]
 type Arr = [string, number, boolean]
 
 type IndexZero = First<Arr>     //type IndexZero = string
+
+
+
+
+////////////////////////////////////////////////////////////////////
+/* 4. For given a tuple, create a generic Length to return the 
+    length of the tuple
+*///////////////////////////////////////////////////////////////////
+
+type TupleLength<Tuple extends readonly any[]> = Tuple['length']
+
+// Example usage 
+
+type Names = ['Alex', 'Eliot']
+
+type LengthOfNames = TupleLength<Names>
