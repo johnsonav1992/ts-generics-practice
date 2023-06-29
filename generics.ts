@@ -97,3 +97,25 @@ type AddedOn = Push<TestArray, 'Hello'>
 
 // TEST //
 // type AddedOn = [1, 2, "Hello"]
+
+
+////////////////////////////////////////////////////////////////////
+/* 6. Implement the util type If<C, T, F> which accepts condition C, 
+    a truthy value T, and a falsy value F. C is expected to be either 
+    true or false while T and F can be any type.
+*///////////////////////////////////////////////////////////////////
+
+type If<C extends boolean, T, F> = C extends true ? T : F
+
+// Example usage
+
+type True = If<true, 1, ''>
+type False = If<false, 1, ''>
+
+const someVariable = 42
+type CheckIfVariableIsTruthy = If<true, typeof someVariable, false>
+
+// TEST //
+// type True = 1
+// type False = ""
+// type Check = 42
