@@ -21,6 +21,7 @@ const person: Person = {
 type FirstNameOnly = MyPick<Person, 'firstName'>
 
 
+
 ////////////////////////////////////////////////////////////////////
 /* 2. Implement the built-in Readonly<T> generic without using it.
     Constructs a type with all properties of T set to readonly, meaning 
@@ -55,7 +56,6 @@ type IndexZero = First<Arr>     //type IndexZero = string
 
 
 
-
 ////////////////////////////////////////////////////////////////////
 /* 4. For given a tuple, create a generic Length to return the 
     length of the tuple
@@ -68,3 +68,17 @@ type TupleLength<Tuple extends readonly any[]> = Tuple['length']
 type Names = ['Alex', 'Eliot']
 
 type LengthOfNames = TupleLength<Names>
+
+
+
+////////////////////////////////////////////////////////////////////
+/* 5. Implement the generic version of Array.push
+*///////////////////////////////////////////////////////////////////
+
+type Push<Array extends unknown[], Item> = [...Array, Item]
+
+// Example usage
+
+type TestArray = [1, 2]
+
+type AddedOn = Push<TestArray, 'Hello'>
