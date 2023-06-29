@@ -20,6 +20,11 @@ const person: Person = {
 
 type FirstNameOnly = MyPick<Person, 'firstName'>
 
+// TEST //
+// type FirstNameOnly = {
+//     firstName: string;
+// }
+
 
 
 ////////////////////////////////////////////////////////////////////
@@ -37,6 +42,7 @@ const person2: MyReadonly<Person> = {
     , lastName: 'Johnson'
 }
 
+// TEST //
 // person2.firstName = 'Bill'  ------ (Err: Cannot assign to firstName because it is a read-only property.)
 
 
@@ -52,7 +58,10 @@ type First<A extends any[]> = A extends [] ? never : A[0]
 
 type Arr = [string, number, boolean]
 
-type IndexZero = First<Arr>     //type IndexZero = string
+type IndexZero = First<Arr>
+
+// TEST //
+// type IndexZero = string
 
 
 
@@ -69,6 +78,9 @@ type Names = ['Alex', 'Eliot']
 
 type LengthOfNames = TupleLength<Names>
 
+// TEST //
+// type LengthOfNames = 2
+
 
 
 ////////////////////////////////////////////////////////////////////
@@ -83,4 +95,5 @@ type TestArray = [1, 2]
 
 type AddedOn = Push<TestArray, 'Hello'>
 
-//
+// TEST //
+// type AddedOn = [1, 2, "Hello"]
