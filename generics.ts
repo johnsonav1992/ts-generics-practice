@@ -119,3 +119,28 @@ type CheckIfVariableIsTruthy = If<true, typeof someVariable, false>
 // type True = 1
 // type False = ""
 // type Check = 42
+
+////////////////////////////////////////////////////////////////////
+/* 7. Sometimes, you may want to look up a type in a union by its attributes.
+    In this challenge, we would like to get the corresponding type by searching for the common type 
+    field in the union Cat | Dog. In other words, we will expect to get Dog for LookUp<Dog | Cat, 'dog'> 
+    and Cat for LookUp<Dog | Cat, 'cat'> in the following example.
+*///////////////////////////////////////////////////////////////////
+
+interface Individual {
+    type: 'person'
+    name: string
+    age: number
+    height: number
+}
+
+interface Animal {
+    type: 'animal'
+    name: string
+    age: number
+    species: string 
+}
+
+type Lookup<TUnion, Key extends string> = TUnion extends {type: Key} ? TUnion : never
+
+type DiscoveredType = Lookup<Individual | Animal, 'person'>
