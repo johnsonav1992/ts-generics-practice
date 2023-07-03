@@ -141,6 +141,6 @@ interface Animal {
     species: string 
 }
 
-type Lookup<TUnion, Key extends string> = TUnion extends {type: Key} ? TUnion : never
+type Lookup<TUnion, Val extends string> = TUnion extends {type: Val} ? TUnion : never
 
 type DiscoveredType = Lookup<Individual | Animal, 'person'>
